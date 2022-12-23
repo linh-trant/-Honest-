@@ -1,8 +1,5 @@
 # The script of the game goes in this file.
 
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
-
 # This will be a basic horror VN. The purpose of the game is making the
 # main character fall in love for you and don't want you to leave. When
 # you leave, technically it's horror now. 
@@ -43,7 +40,6 @@ label start:
 
     show eileen happy
 
-    # These display lines of dialogue.
     python: 
 
         povname = renpy.input("What is your name?", length=10)
