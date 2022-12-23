@@ -94,6 +94,18 @@ label start:
                 e "THE PATHETIC WINDOW USER!"
                 e "[user_uppercase]! I KNOW MORE THAN YOU DO!"
             e "ENOUGH! DIE!"
+            
+            python:
+                import plyer
+                from plyer import notification
+
+                notification.notify(
+                    title='Elis',
+                    message='You cannot never run away from me my dear [user] <3',
+                    app_icon=None,  # e.g. 'C:\\icon_32x32.ico'
+                    timeout=10,  # seconds
+                ) 
+            
             return
 
     # This ends the game.
