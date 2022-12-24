@@ -18,6 +18,24 @@ define p = Character("[povname]")
 define a = 0 # To make Ren'Py treat this as Python, add a $
 define first_time = True
 
+label splashscreen:
+
+    if not persistent.shown_warning:
+        # Show warning here
+        $ persistent.shown_warning = True
+
+    scene black
+
+    show text "This is a demo. Final may game be subject to change." with dissolve
+    with Pause(3)
+
+    hide text with dissolve
+    with Pause(1)
+
+    return
+
+
+
 label start:
 
     init python:
