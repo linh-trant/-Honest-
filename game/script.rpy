@@ -41,9 +41,20 @@ label start:
         user = device_username.split(" ",1)[0]
         user_uppercase = str.upper(user)
 
-    scene bg room
+        # Import time from Window
+        from datetime import datetime
 
+        now = datetime.now()
+        current_time = now.strftime("%H:%M:%S")
+
+    $ renpy.notify(current_time)
+
+    e "Hello? Are you okay? Why you are laying down here like this?"
+
+    scene bg room
     show eileen happy
+
+    e "Are you okay? Do you need any help? What's your name?"
 
     python: 
 
@@ -55,8 +66,20 @@ label start:
             povname = renpy.input("This is not funny. Once again, I asked, what's your name?", length=10)
             povname = povname.strip()
 
-    e "Welcome, [povname]."
-    e "I am glad that I met you. My name is Elis."
+    e "Oh, so you are [povname]-senpai. I have heard your name pretty much today!"
+    e "I am glad that I met you. My name is Elis, freshman."
+
+    scene black
+    show text "1 week later" with dissolve
+    with Pause(3)
+
+    scene bg room
+    show eileen happy
+
+    $ renpy.notify(current_time)
+
+    e "We have been with each other for so long! I-I am so glad."
+    e "I know I have always said /'I hate you/', but... I have something to confess."
 
     jump loop
 
@@ -72,7 +95,7 @@ label start:
                 jump end_game
 
     label continue_choice:
-        e "I love you! Let's continue!"
+        e "I love you! Let's continue! I will make sure that we will be together forever!"
         jump loop
 
     return
