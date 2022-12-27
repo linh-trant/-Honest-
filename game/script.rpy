@@ -19,13 +19,19 @@ label splashscreen:
     if not persistent.shown_warning:
         $ persistent.shown_warning = True
 
-    scene black
+        scene black
 
-    show text "This is a demo. Final may game be subject to change." with dissolve
-    with Pause(3)
+        show text "This is a demo. Final may game be subject to change." with dissolve
+        with Pause(3)
 
-    hide text with dissolve
-    with Pause(1)
+        hide text with dissolve
+        with Pause(1)
+
+        show text "This game contains scenes of graphic violence and brutal depictions of horror." with dissolve
+        with Pause(3)
+
+        hide text with dissolve
+        with Pause(1)
 
     return
 
