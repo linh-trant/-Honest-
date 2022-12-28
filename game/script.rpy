@@ -7,7 +7,10 @@
 # define 5 stages of grief
 # define not a DDLC bootleg
 
-define e = Character("Elis", color="#4b6043") # Name of the main character. Envy.
+image elis = "Elis_cut.png"
+image classroom = "background.png"
+
+define e = Character("Elis", color="#86DC3D") # Name of the main character. Envy.
 define p = Character("[povname]")
 
 
@@ -57,8 +60,8 @@ label start:
 
     e "Hello? Are you okay? Why you are laying down here like this?"
 
-    scene bg room
-    show eileen happy
+    scene classroom
+    show elis
 
     e "Are you okay? Do you need any help? What's your name?"
 
@@ -79,8 +82,8 @@ label start:
     show text "1 week later" with dissolve
     with Pause(3)
 
-    scene bg room
-    show eileen happy
+    scene classroom
+    show elis
 
     $ renpy.notify(current_time)
 
