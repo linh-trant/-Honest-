@@ -40,6 +40,9 @@ label splashscreen:
 
 label start:
 
+    if renpy.exists("ILOVEYOU.txt"):
+        jump end_game
+
     init python:
         import math
         import os
@@ -101,6 +104,10 @@ label start:
                 jump continue_choice
 
             "I am leaving you.":
+                python:
+                    egg = open("D:\honest\game\ILOVEYOU.txt","w")
+                    egg.write("I love you, please don't leave me")
+                    egg.closed
                 jump end_game
 
     label continue_choice:
