@@ -1,4 +1,9 @@
 label end_game:
+
+    init python: 
+        if renpy.exists("ILOVEYOU.txt"):
+            layout.QUIT = "DON'T YOU DARE TO LEAVE ME! STAY!"
+
     if (a==0):
         if first_time:
             e "Already?"
