@@ -18,7 +18,7 @@ define config.name = _("Honest")
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.
 
-define gui.show_name = True
+define gui.show_name = False
 
 
 ## The version of the game.
@@ -30,6 +30,7 @@ define config.version = "Demo"
 ## triple-quotes, and leave a blank line between paragraphs.
 
 define gui.about = _p("""
+    Created by Raimu.
 """)
 
 
