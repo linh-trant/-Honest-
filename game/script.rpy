@@ -16,6 +16,7 @@ define p = Character("[povname]")
 
 define a = 0 # 
 define first_time = True
+define aff_point = 0
 
 label splashscreen:
 
@@ -30,7 +31,7 @@ label splashscreen:
         hide text with dissolve
         with Pause(1)
 
-        show text "This game contains scenes of graphic violence and brutal depictions of horror." with dissolve
+        show text "This game contains scenes of graphic violence and brutal depictions of horror. Viewers who are faint of heart, prone to light headedness or have weak stomachs are advised to take extreme caution." with dissolve
         with Pause(3)
 
         hide text with dissolve
@@ -80,6 +81,44 @@ label start:
 
     e "Oh, so you are [povname]-senpai. I have heard your name pretty much today!"
     e "I am glad that I met you. My name is Elis, freshman."
+
+    "As you can see, this is Elis."
+    "This is your target. Make her fall for you is the goal of this game."
+
+    $ renpy.notify(aff_point)
+
+    "Did you just see that point? That's the affection point."
+    "Try to gain that point as much as possible."
+    "Shall you take a try?"
+
+    jump first_choice
+
+    label first_choice:
+
+        e "Here, take my hand."
+        
+        menu:
+            "Take her hand":
+                $ aff_point = math.ceil(aff_point + 1)
+                $ renpy.notify(aff_point)
+                e "I hope I helped!"
+                "Great job, you scored a point!"
+                "Continue doing this will make you soon achieve the goal!"
+                jump continue
+
+            "I can stand up by myself":
+                $ aff_point = math.ceil(aff_point + 2)
+                $ renpy.notify(aff_point)
+                "Fantastic! You did a really good job on taking her heart!"
+                "Continue doing this will make you soon achieve the goal!"
+                jump continue
+
+            "No need.":
+                $ renpy.notify(aff_point)
+                "Seems like isn't it... Maybe try something else over time?"
+                jump first_choice       
+
+label continue: 
 
     scene black
     show text "1 week later" with dissolve
