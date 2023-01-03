@@ -1,5 +1,8 @@
 label end_game:
 
+    scene classroom
+    show elis
+
     init python: 
         if renpy.exists("ILOVEYOU.txt"):
             layout.QUIT = "DON'T YOU DARE TO LEAVE ME! STAY!"

@@ -10,7 +10,7 @@
 image elis = "Elis_cut.png"
 image classroom = "background.png"
 
-define e = Character("Elis", color="#86DC3D") # Name of the main character. Envy.
+define e = Character("Elis", color="#F296C4") # Name of the main character. Envy.
 define p = Character("[povname]")
 
 
