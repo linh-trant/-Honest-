@@ -44,6 +44,9 @@ label start:
     if renpy.exists("ILOVEYOU.txt"):
         jump end_game
 
+    if renpy.exists("congratulation.txt"):
+        jump loop
+
     init python:
         import math
         import os
@@ -138,12 +141,19 @@ label continue:
     jump loop
 
     label loop: 
+        scene classroom
+        show elis
+        
         e "I love you, do you love me?"
 
         menu: 
             "I love you.":
                 $ first_time = False
-                jump continue_choice
+                $ aff_point = math.ceil(aff_point + 2)
+                if (aff_point < 10):
+                    jump continue_choice
+                else:
+                    jump first_end
 
             "I am leaving you.":
                 python:
