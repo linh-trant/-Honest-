@@ -63,9 +63,6 @@ label start:
         now = datetime.now()
         current_time = now.strftime("%H:%M:%S")
 
-        if renpy.exists("ILOVEYOU.txt"):
-            os.remove('ILOVEYOU.txt')
-
     $ renpy.notify(current_time)
 
     e "Hello? Are you okay? Why you are laying down here like this?"
@@ -143,7 +140,7 @@ label continue:
     label loop: 
         scene classroom
         show elis
-        
+
         e "I love you, do you love me?"
 
         menu: 
