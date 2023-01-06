@@ -18,6 +18,7 @@ default persistent.accept = False
 define a = 0 # 
 define first_time = True
 define aff_point = 0
+define trigger = 0
 
 label splashscreen:
 
@@ -49,9 +50,6 @@ label start:
         # jump loop
 
     if persistent.accept:
-
-        e "We did it!"
-
         jump second_playthrough
 
     init python:
@@ -123,9 +121,10 @@ label start:
                 "Continue doing this will make you soon achieve the goal!"
                 jump continue
 
-            "No need.":
+            "No need." if (trigger<2):
                 $ renpy.notify(aff_point)
                 "Seems like isn't it... Maybe try something else over time?"
+                $ trigger = math.ceil(trigger + 1)
                 jump first_choice       
 
 label continue: 
