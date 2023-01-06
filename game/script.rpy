@@ -13,6 +13,7 @@ image classroom = "background.png"
 define e = Character("Elis", color="#F296C4") # Name of the main character. Envy.
 define p = Character("[povname]")
 
+default persistent.accept = False
 
 define a = 0 # 
 define first_time = True
@@ -44,8 +45,14 @@ label start:
     if renpy.exists("ILOVEYOU.txt"):
         jump end_game
 
-    if renpy.exists("congratulation.txt"):
-        jump loop
+    # if renpy.exists("congratulation.txt"):
+        # jump loop
+
+    if persistent.accept:
+
+        e "We did it!"
+
+        jump second_playthrough
 
     init python:
         import math
@@ -133,7 +140,7 @@ label continue:
     $ renpy.notify(current_time)
 
     e "We have been with each other for so long! I-I am so glad."
-    e "I know I have always said /'I hate you/', but... I have something to confess."
+    e "I know I have always said 'I hate you', but... I have something to confess."
 
     jump loop
 

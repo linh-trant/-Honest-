@@ -7,9 +7,12 @@ label first_end:
     "Congrats. Now you have a girlfriend."
     "I wonder how you would treat her."
 
-    python:
-        first_1 = open("D:\honest\game\congratulation.txt","w")
-        first_1.write("Treat her well.")
-        first_1.closed
+    $ persistent.accept = True
+
+
+    #python:
+        #first_1 = open("D:\honest\game\congratulation.txt","w")
+        #first_1.write("Treat her well.")
+        #first_1.closed
 
     $ renpy.quit()
