@@ -42,4 +42,5 @@ label end_game:
                 timeout=10,  # seconds
             )  
 
-        return
+        $ persistent.comeback = True
+        $ renpy.quit()

@@ -14,6 +14,7 @@ define e = Character("Elis", color="#F296C4") # Name of the main character. Envy
 define p = Character("[povname]")
 
 default persistent.accept = False
+default persistent.comeback = False
 
 define a = 0 # 
 define first_time = True
@@ -42,6 +43,9 @@ label splashscreen:
     return
 
 label start:
+
+    if persistent.comeback:
+        jump final
 
     if renpy.exists("ILOVEYOU.txt"):
         jump end_game
